@@ -13,13 +13,7 @@ app.use(bodyParser.urlencoded());
 
 app.use(bodyParser.json());
 
-app.use(
-    cors({
-        exposedHeaders: ['App-Commit-Hash'],
-        credentials: true,
-        origin: 'http://localhost:4200',
-    }),
-);
+app.use(cors());
 
 app.set('port', 8000);
 
