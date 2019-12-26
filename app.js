@@ -15,8 +15,6 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-app.set('port', 8000);
-
 app.use(function (req, res, next) {
     console.log('Time:', Date.now());
     next();
@@ -53,7 +51,7 @@ app.post('/rsa/decrypt' ,function(req, res) {
     res.send({decrypted});
 });
 
-app.listen(app.get('port') || process.env.PORT, function() {
+app.listen(process.env.PORT, function() {
     console.log('hello' + app.get('port'));
 });
 
