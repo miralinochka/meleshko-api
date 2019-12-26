@@ -53,7 +53,7 @@ app.post('/rsa/decrypt' ,function(req, res) {
     res.send({decrypted});
 });
 
-app.listen(app.get('port'), function() {
+app.listen(app.get('port') || process.env.PORT, function() {
     console.log('hello' + app.get('port'));
 });
 
