@@ -51,6 +51,16 @@ app.post('/rsa/decrypt' ,function(req, res) {
     res.send({decrypted});
 });
 
+app.post('/login' ,function(req, res) {
+    if (req.body.username === 'irm-651' && req.body.password === '164') {
+        res.status(200);
+        res.send({success: true})
+    } else {
+        res.status(401);
+        res.send({success: false})
+    }
+});
+
 app.listen(process.env.PORT, function() {
     console.log('hello' + app.get('port'));
 });
